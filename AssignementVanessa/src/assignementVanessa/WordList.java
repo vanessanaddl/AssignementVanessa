@@ -26,4 +26,10 @@ public class WordList {
 	{
 		return List.size();	
 	}
+	
+	//Task 6
+	public String getWord(final int index)
+	{
+		return List.get(index);
+	}
 }
