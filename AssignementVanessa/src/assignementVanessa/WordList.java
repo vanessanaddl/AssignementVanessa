@@ -15,10 +15,15 @@ public class WordList {
 	@Persistent
 	private Key key;
 	
+	//Task 4
 	WordList(Key keyCons)
 	{
 		key = keyCons; 
 	}
-
-
+	
+	//Task 5
+	public int WordCount()
+	{
+		return List.size();	
+	}
 }
