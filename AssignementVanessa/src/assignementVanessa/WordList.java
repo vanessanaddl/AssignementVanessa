@@ -32,4 +32,13 @@ public class WordList {
 	{
 		return List.get(index);
 	}
+	
+	//Task 7
+	public void addWord(final String word)
+	{
+		if (List.contains(word)==true)
+		{
+			List.add(word);
+		}
+	}
 }
