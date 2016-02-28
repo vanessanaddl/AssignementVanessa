@@ -1,4 +1,4 @@
-package assignementVanessa;
+package assignmentVanessa;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -35,6 +35,7 @@ public class RootServlet extends HttpServlet {
 		req.setAttribute("login_url", login_url);
 		req.setAttribute("logout_url", logout_url);
 		req.setAttribute("current_time", time);
+		req.setAttribute("MessageTask8", "Welcome! This is Anagram-Engine 2.0!");
 		// get a request dispatcher and forward onto the JSP
 		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/root.jsp");
 		rd.forward(req, resp);

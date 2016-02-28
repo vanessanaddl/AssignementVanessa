@@ -1,4 +1,4 @@
-package assignementVanessa;
+package assignmentVanessa;
 import java.util.ArrayList;
 
 import javax.jdo.annotations.PersistenceCapable;

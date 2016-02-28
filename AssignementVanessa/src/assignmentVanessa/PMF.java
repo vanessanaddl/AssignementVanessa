@@ -1,4 +1,4 @@
-package assignementVanessa;
+package assignmentVanessa;
 //imports
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManagerFactory;
