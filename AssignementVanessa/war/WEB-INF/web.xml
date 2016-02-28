@@ -4,6 +4,8 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	
+		<!-- RootServlet -->
 	<servlet>
 		<servlet-name>RootServlet</servlet-name>
 		<servlet-class>assignmentVanessa.RootServlet</servlet-class>
@@ -11,5 +13,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>RootServlet</servlet-name>
 		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<!-- AnagramServlet -->
+	<servlet>
+		<servlet-name>AnagramServlet</servlet-name>
+		<servlet-class>assignmentVanessa.AnagramServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AnagramServlet</servlet-name>
+		<url-pattern>/Anagram</url-pattern>
 	</servlet-mapping>
 </web-app>
