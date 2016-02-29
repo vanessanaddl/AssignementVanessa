@@ -1,4 +1,5 @@
 package assignmentVanessa;
+
 import java.util.ArrayList;
 
 import javax.jdo.annotations.PersistenceCapable;
@@ -10,35 +11,60 @@ import com.google.appengine.api.datastore.KeyFactory;
 
 @PersistenceCapable
 public class WordList {
-	ArrayList <String> List = new ArrayList<String>();
+	ArrayList<String> List;
 	@PrimaryKey
 	@Persistent
 	private Key key;
-	
-	//Task 4
-	WordList(Key keyCons)
-	{
-		key = keyCons; 
+
+	// Task 4
+	WordList(Key keyCons) {
+		key = keyCons;
 	}
-	
-	//Task 5
-	public int WordCount()
-	{
-		return List.size();	
+
+	public ArrayList<String> getList() {
+		return List;
 	}
-	
-	//Task 6
-	public String getWord(final int index)
-	{
+
+	public void setList() {
+		List = new ArrayList<String>();
+	}
+
+	public Key getKey() {
+		return key;
+	}
+
+	public void setKey(Key key) {
+		this.key = key;
+	}
+
+	// Default Constructor
+	WordList() {
+
+	}
+
+	// Task 5
+	public int WordCount() {
+		return List.size();
+	}
+
+	// Task 6
+	public String getWord(final int index) {
 		return List.get(index);
 	}
-	
-	//Task 7
-	public void addWord(final String word)
-	{
-		if (List.contains(word)==true)
-		{
-			List.add(word);
+
+	// Task 7
+	public boolean addWord(final String word) {
+		boolean check = false;
+		try {
+
+			if (!(List.contains(word))) {
+				List.add(word);
+				check = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getLocalizedMessage();
 		}
+		return check;
 	}
 }
