@@ -16,35 +16,42 @@ consequently if the user is logged out we need to render adifferent version
 	<c:choose>
 		<c:when test="${user != null}">
 			<p>
-				Welcome ${user.email} <br/> 
+				Welcome ${user.email} <br />
 			</p>
 			<form action="/anagram" method="get">
 				Search the Anagrams of your favorite word: <input type="text"
-					name="text_input1"/><input type="submit" value="Go for it!"/><br/>
+					name="text_input1" /><input type="submit" value="Go for it!" /><br />
 			</form>
-		
+
 			<!--  c:choose textinput="" oder null? -->
-			
+
 			<form action="/anagram" method="post">
 				Add your favorite word to the List: <input type="text"
-					name="text_input2"/><input type="submit" value="Go for it!"/><br/>
+					name="text_input2" /><input type="submit" value="Go for it!" /><br />
 			</form>
-			<p>
-			${MessageTest}
-			</p>
-			<br/><br/><br/><br/>
-			You can signout <a href="${logout_url}">here</a><br/>
+			<p></p>
+			<br />
+			<br />
+			<br />
+			<br />
+			You can signout <a href="${logout_url}">here</a>
+			<br />
+			
 		</c:when>
 		<c:otherwise>
 			<p>
 				Welcome! <a href="${login_url}">Sign in or register</a>"
-				</p>
-				</c:otherwise>
-				
-	</c:choose>
-	
+			</p>
+			<textarea rows="4" cols="50">
+			${output}
+			${MessageTest}
+</textarea>
+		</c:otherwise>
 
-	
+	</c:choose>
+
+
+
 
 
 
