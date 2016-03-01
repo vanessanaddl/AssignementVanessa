@@ -11,6 +11,8 @@ import com.google.appengine.api.users.UserServiceFactory;
 
 @SuppressWarnings("serial")
 public class RootServlet extends HttpServlet {
+	public static String message;
+	public static String output;
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
 		resp.setContentType("text/html");
@@ -27,6 +29,8 @@ public class RootServlet extends HttpServlet {
 		req.setAttribute("login_url", login_url);
 		req.setAttribute("logout_url", logout_url);
 		req.setAttribute("MessageTask8", "Welcome! This is Anagram-Engine 2.0!");
+		req.setAttribute("MessageTest", message);
+		req.setAttribute("output", output);
 		
 		// get a request dispatcher and forward onto the JSP
 		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/root.jsp");

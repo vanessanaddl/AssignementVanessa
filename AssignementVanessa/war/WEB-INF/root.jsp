@@ -6,46 +6,39 @@
 <title>Anagram Engine 2.0</title>
 </head>
 <body style="font-family: Calibri">
-	<!-- if the user is logged in then we need to render one version of
- the page
-consequently if the user is logged out we need to render adifferent version
-                   of the page
-            -->
+
 	<b>${MessageTask8}</b>
 
 	<c:choose>
 		<c:when test="${user != null}">
 			<p>
-				Welcome ${user.email} <br />
+				Hi, ${user.email}<br/>
 			</p>
 			<form action="/anagram" method="get">
 				Search the Anagrams of your favorite word: <input type="text"
-					name="text_input1" /><input type="submit" value="Go for it!" /><br />
+					name="text_input1"/><input type="submit" value="Go for it!"/><br/>
 			</form>
-
-			<!--  c:choose textinput="" oder null? -->
 
 			<form action="/anagram" method="post">
 				Add your favorite word to the List: <input type="text"
-					name="text_input2" /><input type="submit" value="Go for it!" /><br />
+					name="text_input2"/><input type="submit" value="Go for it!"/><br/>
 			</form>
-			<p></p>
-			<br />
-			<br />
-			<br />
-			<br />
-			You can signout <a href="${logout_url}">here</a>
-			<br />
+			<br/><br/><br/><br/>
+			<textarea rows="4" cols="50">
+				${output}
+				${MessageTest}
+			</textarea>
+			<br/>
+			Tired of Anagram Engine? Signout <a href="${logout_url}">here.</a> See you :) 
+			<br/>
 			
 		</c:when>
 		<c:otherwise>
 			<p>
-				Welcome! <a href="${login_url}">Sign in or register</a>"
+				Welcome to Anagram Engine 2.0! Nice to see you :) <br/>
+				Sign in or register with your <a href="${login_url}">Google Account</a>".
 			</p>
-			<textarea rows="4" cols="50">
-			${output}
-			${MessageTest}
-</textarea>
+			
 		</c:otherwise>
 
 	</c:choose>

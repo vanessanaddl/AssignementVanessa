@@ -24,7 +24,7 @@ public class AnagramServlet extends HttpServlet {
 			throws IOException, ServletException {
 		resp.setContentType("text/html");
 		PersistenceManager pm = PMF.get().getPersistenceManager(); // "translates"
-		String text_input1 = req.getParameter("text_input1"); // reads request		
+		String text_input1 = req.getParameter("text_input1"); // reads request	
 		char[] input1Array = new char[text_input1.length()];
 		text_input1.getChars(0, text_input1.length(), input1Array, 0);
 		Arrays.sort(input1Array);
@@ -40,22 +40,25 @@ public class AnagramServlet extends HttpServlet {
 		for (int i=0; i < thisArrayList.size(); i++){
 			output=output+thisArrayList.get(i);
 		}
+		RootServlet.message = "Yeeei! Here are your Anagrams:";
 		req.setAttribute("output", output);
-		req.setAttribute("MessageTest", "Succesfull");
-		
 	}
 	catch (Exception e)
 	{
 		e.printStackTrace(); 
 		e.getLocalizedMessage();
-		req.setAttribute("MessageTest","Anagram existiert nicht in der DB");
+		//req.setAttribute("MessageTest","Anagram doesn't exist in the Database.");
+		RootServlet.message = "Anagram existiert nicht in der DB";
 	}
 	RequestDispatcher reqDisp = req.getRequestDispatcher("/WEB-INF/root.jsp");
-	//resp.sendRedirect("/");
+	resp.sendRedirect("/");
 	reqDisp.forward(req,resp); //back to root.jsp
 	
 		}
-
+	/* ------------------------------------------------------------------------------------
+	 * ------------------------------------------------------------------------------------
+	 * ------------------------------------------------------------------------------------*/
+	
 	// Task 11 --doPost--
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
@@ -72,6 +75,7 @@ public class AnagramServlet extends HttpServlet {
 			WordList thiswordList = pm.getObjectById(WordList.class, key);
 			thiswordList.addWord(text_input2);
 			pm.makePersistent(thiswordList);
+			RootServlet.message = "Yeeei! Your favorrite word have been added to an existing list!";
 		}
 		catch (Exception e)
 		{
@@ -83,10 +87,11 @@ public class AnagramServlet extends HttpServlet {
 			wordList.setList();  //generate new empty String List
 			wordList.addWord(text_input2);
 			pm.makePersistent(wordList);
+			RootServlet.message = "Yeeei! Your favorite word have been added to an new list!";
 		}
 		
 		RequestDispatcher reqDisp = req.getRequestDispatcher("/WEB-INF/root.jsp");
-		//resp.sendRedirect("/");
+		resp.sendRedirect("/");
 		reqDisp.forward(req,resp); //back to root.jsp
 	}
 }
