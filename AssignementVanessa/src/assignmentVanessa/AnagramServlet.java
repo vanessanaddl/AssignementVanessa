@@ -36,19 +36,24 @@ public class AnagramServlet extends HttpServlet {
 		WordList thiswordList = pm.getObjectById(WordList.class, key);
 		ArrayList<String> thisArrayList = thiswordList.getList();
 		req.setAttribute("anagList", thisArrayList);
-		String output="";
 		for (int i=0; i < thisArrayList.size(); i++){
-			output=output+thisArrayList.get(i);
+			if (i==0)
+			{
+				RootServlet.output=thisArrayList.get(i);
+			}
+			else
+			{
+			RootServlet.output=RootServlet.output+" "+thisArrayList.get(i);
+			}
 		}
 		RootServlet.message = "Yeeei! Here are your Anagrams:";
-		req.setAttribute("output", output);
+		req.setAttribute("output", RootServlet.output);
 	}
 	catch (Exception e)
 	{
 		e.printStackTrace(); 
 		e.getLocalizedMessage();
-		//req.setAttribute("MessageTest","Anagram doesn't exist in the Database.");
-		RootServlet.message = "Anagram existiert nicht in der DB";
+		RootServlet.message = "Anagram does not exist in the Database. Feel free to add :)";
 	}
 	RequestDispatcher reqDisp = req.getRequestDispatcher("/WEB-INF/root.jsp");
 	resp.sendRedirect("/");

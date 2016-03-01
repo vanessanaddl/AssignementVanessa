@@ -25,11 +25,11 @@
 			</form>
 			<br/><br/><br/><br/>
 			<textarea rows="4" cols="50">
-				${output}
 				${MessageTest}
+				${output}
 			</textarea>
 			<br/>
-			Tired of Anagram Engine? Signout <a href="${logout_url}">here.</a> See you :) 
+			Tired of Anagram Engine 2.0? Signout <a href="${logout_url}">here.</a> See you :) 
 			<br/>
 			
 		</c:when>
