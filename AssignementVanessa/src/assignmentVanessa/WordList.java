@@ -16,43 +16,37 @@ public class WordList {
 	@Persistent
 	private Key key;
 
-	// Task 4
+	// Task 4: Constructor
 	WordList(Key keyCons) {
 		key = keyCons;
 	}
-
 	public ArrayList<String> getList() {
 		return List;
 	}
-
 	public void setList() {
 		List = new ArrayList<String>();
 	}
-
 	public Key getKey() {
 		return key;
 	}
-
 	public void setKey(Key key) {
 		this.key = key;
-	}
-
+	}	
 	// Default Constructor
 	WordList() {
-
 	}
 
-	// Task 5
-	public int WordCount() {
+	// Task 5 wordCount-method
+	public int wordCount() {
 		return List.size();
 	}
 
-	// Task 6
+	// Task 6 getWord-method
 	public String getWord(final int index) {
 		return List.get(index);
 	}
 
-	// Task 7
+	// Task 7 addWord-method
 	public boolean addWord(final String word) {
 		boolean check = false;
 		try {

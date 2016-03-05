@@ -23,12 +23,11 @@
 				Add your favorite word to the List: <input type="text"
 					name="text_input2"/><input type="submit" value="Go for it!"/><br/>
 			</form>
-			<br/><br/><br/><br/>
-			<textarea rows="4" cols="50">
-				${MessageTest}
-				${output}
-			</textarea>
 			<br/>
+			<textarea rows="3" cols="60">
+				${Message}
+			</textarea>
+			<br/><br/><br/><br/>
 			Tired of Anagram Engine 2.0? Signout <a href="${logout_url}">here.</a> See you :) 
 			<br/>
 			
