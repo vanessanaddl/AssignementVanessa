@@ -58,9 +58,9 @@ public class AnagramServlet extends HttpServlet {
 		else {
 			message = "Sorry, what did you say? I can't hear you!"; // error-message: empty text input
 		}
-		RequestDispatcher reqDisp = req.getRequestDispatcher("/WEB-INF/root.jsp");
+		
 		resp.sendRedirect("/?message="+message);
-		reqDisp.forward(req, resp); // back to root.jsp
+	
 
 	}
 
@@ -110,8 +110,8 @@ public class AnagramServlet extends HttpServlet {
 												
 		}
 
-		RequestDispatcher reqDisp = req.getRequestDispatcher("/WEB-INF/root.jsp");
+		
 		resp.sendRedirect("/?message="+message);
-		reqDisp.forward(req, resp); // back to root.jsp
+		
 	}
 }
